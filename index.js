@@ -3,9 +3,6 @@ const app = express()
 app.use(express.static('build'))
 app.use(express.json())
 
-const http = require('http')
-const server = http.createServer(app)
-
 const fs = require('fs')
 
 let history = []
@@ -45,4 +42,4 @@ app.post('/api/data', (req, res) => {
 })
 
 const PORT = process.env.PORT || 3000
-server.listen(PORT)
+app.listen(PORT)
