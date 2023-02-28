@@ -6,12 +6,12 @@
       {
         "img": "2023-02-28-0.png",
         "txt": "you",
-        "total": 5
+        "total": 38
       },
       {
         "img": "2023-02-28-1.png",
         "txt": "me",
-        "total": 6
+        "total": 13
       }
     ]
   },
@@ -20,12 +20,12 @@
     "question": "This or That?",
     "choices": [
       {
-        "img": "2023-02-29-0.png",
+        "img": "2023-03-01-0.png",
         "txt": "this",
         "total": 0
       },
       {
-        "img": "2023-02-29-1.png",
+        "img": "2023-03-01-1.png",
         "txt": "that",
         "total": 0
       }
