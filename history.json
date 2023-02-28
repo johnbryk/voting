@@ -6,7 +6,7 @@
       {
         "img": "2023-02-28-0.png",
         "txt": "you",
-        "total": 40
+        "total": 43
       },
       {
         "img": "2023-02-28-1.png",
@@ -17,7 +17,7 @@
   },
   {
     "id": "2023-03-01",
-    "question": "This or That?",
+    "question": "Quick: This or That?",
     "choices": [
       {
         "img": "2023-03-01-0.png",
@@ -33,7 +33,7 @@
   },
   {
     "id": "2023-03-02",
-    "question": "Rock, Paper, or Scissors?",
+    "question": "Shoot: Rock, Scissprs, or Paper?",
     "choices": [
       {
         "img": "2023-03-02-0.png",
@@ -42,12 +42,12 @@
       },
       {
         "img": "2023-03-02-1.png",
-        "txt": "paper",
+        "txt": "scissors",
         "total": 0
       },
       {
         "img": "2023-03-02-1.png",
-        "txt": "scissors",
+        "txt": "paper",
         "total": 0
       }
     ]
