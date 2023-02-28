@@ -1,9 +1,23 @@
+import { useState, useEffect } from 'react'
+
 const Button = (props) => {
+
+  const [percentGrow, setPercentGrow] = useState(0)
+
   const img = `/img/${props.choice.img}`
   const txt = props.choice.txt
   const onClick = props.onClick
   const percent = props.percent
   const voted = props.voted
+
+  const keepGrowing = percentGrow < percent.slice(0, percent.length-1)
+
+  useEffect(() => {
+    console.log('happens')
+    if(voted && keepGrowing) {
+      window.setTimeout(() => { setPercentGrow(percentGrow+1) }, 10)
+    }
+  }, [props.voted, percentGrow])
 
   return (
     <div>
@@ -15,7 +29,7 @@ const Button = (props) => {
         }}
         onClick={onClick}
       >
-        {voted ? percent : ''}
+        {voted ? (keepGrowing ? percentGrow + "%" : percent) : ''}
       </div>
       {txt.toUpperCase()}
     </div>
