@@ -9,7 +9,8 @@ const App = () => {
   const [question, setQuestion] = useState('')
   const [choices, setChoices] = useState([])
 
-  const voted = localStorage.voted ? localStorage.voted : false
+  const voted = localStorage.voted ? localStorage.voted : null
+  const date = new Date().toString().slice(0, 10)
   const totals = choices.map(choice => choice.total)
   const totalVotes = totals.reduce((prev, curr) => prev+curr, 0)
   const percents = totals.map(total => (total / totalVotes)
@@ -29,7 +30,7 @@ const App = () => {
       .post(url, {vote: i})
       .then(res => {
         setChoices(res.data.choices)
-        localStorage.voted = true
+        localStorage.voted = date
       })
   }
 
@@ -40,7 +41,7 @@ const App = () => {
       </div>
       <div className='buttons'>
         {choices.map((choice, vote) => (
-          <Button key={vote} choice={choice} onClick={voted ? null : () => {onClick(vote)}} percent={percents[vote]} voted={voted}/>
+          <Button key={vote} choice={choice} onClick={voted === date ? null : () => {onClick(vote)}} percent={percents[vote]} voted={voted === date}/>
         ))}
       </div>
     </div>
