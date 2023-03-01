@@ -69,6 +69,6 @@ body {
 
 .new {
   font-family: 'Garamond', Georgia, 'Times New Roman', Times, serif;
-  margin-top: min(20px, auto);
+  margin-top: auto;
   margin: 20px;
 }
