@@ -17,7 +17,7 @@ const Button = (props) => {
     if(voted && keepGrowing) {
       window.setTimeout(() => { setPercentGrow(percentGrow+1) }, 10)
     }
-  }, [props.voted, percentGrow])
+  }, [voted, percentGrow, keepGrowing])
 
   return (
     <div>
