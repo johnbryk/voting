@@ -10,7 +10,7 @@ const App = () => {
   const [choices, setChoices] = useState([])
 
   const voted = localStorage.voted ? localStorage.voted : null
-  const date = new Date().toString().slice(0, 10)
+  const date = new Date().toISOString().slice(0, 10)
   const totals = choices.map(choice => choice.total)
   const totalVotes = totals.reduce((prev, curr) => prev+curr, 0)
   const percents = totals.map(total => (total / totalVotes)
@@ -35,14 +35,23 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className='main'>
       <div className='question'>
         {question.toUpperCase()}
       </div>
       <div className='buttons'>
         {choices.map((choice, vote) => (
-          <Button key={vote} choice={choice} onClick={voted === date ? null : () => {onClick(vote)}} percent={percents[vote]} voted={voted === date}/>
+          <Button
+            key={vote}
+            choice={choice}
+            onClick={voted === date ? null : () => {onClick(vote)}}
+            percent={percents[vote]}
+            voted={voted === date}
+          />
         ))}
+      </div>
+      <div>
+        new votes every day at 00:00 UTC
       </div>
     </div>
   )
