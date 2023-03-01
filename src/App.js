@@ -34,26 +34,34 @@ const App = () => {
       })
   }
 
+  const questionFormat = (q) => {
+    const lines = q.toUpperCase().split('\n')
+    const out = lines.slice(1).reduce((prev, curr) => <>{prev}<br />{curr}</>, lines[0])
+    return(<span>{out}</span>)
+  }
+
   return (
-    <div className='main'>
-      <div className='question'>
-        {question.toUpperCase()}
+    <>
+      <div className='main'>
+        <div className='question'>
+          {questionFormat(question)}
+        </div>
+        <div className='buttons'>
+          {choices.map((choice, vote) => (
+            <Button
+              key={vote}
+              choice={choice}
+              onClick={voted === date ? null : () => { onClick(vote) }}
+              percent={percents[vote]}
+              voted={voted === date}
+            />
+          ))}
+        </div>
       </div>
-      <div className='buttons'>
-        {choices.map((choice, vote) => (
-          <Button
-            key={vote}
-            choice={choice}
-            onClick={voted === date ? null : () => {onClick(vote)}}
-            percent={percents[vote]}
-            voted={voted === date}
-          />
-        ))}
+      <div className='new'>
+        new votes everyday @ 00:00 utc
       </div>
-      <div>
-        new votes every day at 00:00 UTC
-      </div>
-    </div>
+    </>
   )
 }
 
