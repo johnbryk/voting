@@ -25,7 +25,9 @@ const Button = (props) => {
         className='button'
         style={{
           backgroundImage: `url(${img})`,
-          boxShadow: voted ? 'inset 0 0 0 2000px rgba(50, 50, 50, 0.7)' : 'inset 0 0 0 0px rgba(127, 127, 127, 0)'
+          boxShadow: voted ?
+            'inset 0 0 0 2000px rgba(50, 50, 50, 0.7)' :
+            'inset 0 0 0 0px rgba(127, 127, 127, 0)'
         }}
         onClick={onClick}
       >
