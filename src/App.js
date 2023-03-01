@@ -42,21 +42,19 @@ const App = () => {
 
   return (
     <>
-      <div className='main'>
-        <div className='question'>
-          {questionFormat(question)}
-        </div>
-        <div className='buttons'>
-          {choices.map((choice, vote) => (
-            <Button
-              key={vote}
-              choice={choice}
-              onClick={voted === date ? null : () => { onClick(vote) }}
-              percent={percents[vote]}
-              voted={voted === date}
-            />
-          ))}
-        </div>
+      <div className='question'>
+        {questionFormat(question)}
+      </div>
+      <div className='buttons'>
+        {choices.map((choice, vote) => (
+          <Button
+            key={vote}
+            choice={choice}
+            onClick={voted === date ? null : () => { onClick(vote) }}
+            percent={percents[vote]}
+            voted={voted === date}
+          />
+        ))}
       </div>
       <div className='new'>
         new votes everyday @ 00:00 utc
